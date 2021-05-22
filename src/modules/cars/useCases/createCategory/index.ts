@@ -1,0 +1,11 @@
+import { CategoriesRepository } from "../../repositories/CategoriesRepository";
+import { CreateCategoryController } from "./CreateCategoryContoller";
+import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
+
+const categoriesRepository = new CategoriesRepository();
+const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository);
+const createCategoryCrontroller = new CreateCategoryController(
+  createCategoryUseCase
+);
+
+export { createCategoryCrontroller, createCategoryUseCase };
